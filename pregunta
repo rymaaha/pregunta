@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #breakingUp {
+            position: absolute;
+            left: 20%;
+            top: 50%;
+            transform: translate(0%, -50%);
+            transition: all 0.2s ease-in-out;
+        }
+        #breakingUp:active {
+            transform: translate(-50px, -50px);
+        }
+        #breakingUp:hover {
+            cursor: not-allowed;
+        }
+        #yesBaby {
+            position: absolute;
+            right: 20%;
+            top: 50%;
+            transform: translate(0%, -50%);
+        }
+        #message {
+            display: none;
+            position: absolute;
+            top: 90%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        #yesBaby:active ~ #message {
+            display: block;
+        }
+        h1 {
+            text-align: center;
+            font-weight: bold;
+        }
+        img{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 30%;
+        }
+    </style>
+</head>
+<body>
+    <h1>do you wanna do something?</h1>
+    <img src="https://i.kym-cdn.com/photos/images/newsfeed/002/329/867/9f2" alt="image">
+    <button id="breakingUp" onmousemove="moveAway()">we're literally breaking up...</button>
+    <button id="yesBaby">YES BABY!</button>
+    <div id="message">WOOHOO YAY I LOVE YOU <br>it'd be great if we could...idk! actually speak to each other! ha ha. i miss you.</br><br>don't say it back just cuz i said it.🤨🤨🤨🤨</br></div>
+    <script>
+        function moveAway() {
+            var button = document.getElementById("breakingUp");
+            var x = event.clientX;
+            var y = event.clientY;
+            button.style.left = x + 'px';
+            button.style.top = y + 'px';
+        }
+    </script>
+</body>
+</html>
